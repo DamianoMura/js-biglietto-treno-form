@@ -25,13 +25,34 @@ const button=document.getElementById("submit");
 
 //e gli allacciamo un event listener
 button.addEventListener('click' , function(event){
-  console.log(event);
-  event.preventDefault();
-  // il contenuto del nostro primo text-input di id# full-name sarà : 
-console.log(document.getElementById(`full-name`).value) //debug
-// il contenuto del secondo text-input di id# distance sarà :
-console.log(document.getElementById(`distance`).value)  //debug
-// il contenuto del terzo text-input di id# age-range sarà :
-console.log(document.getElementById(`age-range`).value) //debug 
-// ora invece dopo il click possiamo vedere 
+console.log(event);
+event.preventDefault();
+//prendiamo il contenuto del nostro primo text-input di id# full-name e lo mettiamo in fullName : 
+const fullName=document.getElementById(`full-name`).value //debug
+//prendiamo il contenuto del secondo text-input di id# distance e lo mettiamo in distance:
+const distance=parseInt(document.getElementById(`distance`).value)  
+//prendiamo il contenuto del terzo text-input di id# age-range e lo mettiamo in age :
+const age= parseInt(document.getElementById(`age-range`).value) //debug 
+// vediamo se non sono nulli o stringhe vuote
+if(fullName!==`` && (distance!==``&& distance!==NaN) && (distance!==``&& distance!==NaN)){
+  
+  let price=distance*0.21;
+  let message=`maggiorenne`;
+  if(age<18){
+    price=price/0.8;
+    message=`minorenne`;
+  }
+  else if(age>64){
+    price=price/0.6;
+    message=`senior`;
+  }
+  console.log(`ciao ${fullName}  tratta ${distance} Km (${message}): ${price} euro`)
+}
+else {
+  console.log("inserisci valori validi")
+}
+
+
+
 });
+
