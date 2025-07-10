@@ -13,11 +13,11 @@
 // Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente due input e un bottone (non stilizzati), realizziamo le specifiche scritte sopra. La risposta finale (o output) sarà anch’essa da scrivere in console.
 
 // il contenuto del nostro primo text-input di id# full-name sarà : 
-console.log(document.getElementById(`full-name`).value) //debug
+console.log(document.getElementById("full-name").value) //debug
 // il contenuto del secondo text-input di id# distance sarà :
-console.log(document.getElementById(`distance`).value)  //debug
+console.log(document.getElementById("distance").value)  //debug
 // il contenuto del terzo text-input di id# age-range sarà :
-console.log(document.getElementById(`age-range`).value) //debug 
+console.log(document.getElementById("age-range").value) //debug 
 // il valore però è una stringa vuota al momento del caricamento della pagina
 
 //selezioniamo il bottone per id 
@@ -28,31 +28,28 @@ button.addEventListener('click' , function(event){
 console.log(event);
 event.preventDefault();
 //prendiamo il contenuto del nostro primo text-input di id# full-name e lo mettiamo in fullName : 
-const fullName=document.getElementById(`full-name`).value //debug
+const fullName=document.getElementById(`full-name`).value; //debug
 //prendiamo il contenuto del secondo text-input di id# distance e lo mettiamo in distance:
-const distance=parseInt(document.getElementById(`distance`).value)  
+const distance =document.getElementById(`distance`).value;  
 //prendiamo il contenuto del terzo text-input di id# age-range e lo mettiamo in age :
-const age= parseInt(document.getElementById(`age-range`).value) //debug 
-// vediamo se non sono nulli o stringhe vuote
-if(fullName!==`` && (distance!==``&& distance!==NaN) && (distance!==``&& distance!==NaN)){
-  
+const age= document.getElementById(`age-range`).value; //debug 
+
+if (fullName!==`` && distance!=="" && distance!==NaN &&age!==`` && age!==NaN ){
+  let message="Biglietto standard";
   let price=distance*0.21;
-  let message=`maggiorenne`;
   if(age<18){
     price=price/0.8;
-    message=`minorenne`;
+    message="Biglietto <18";
   }
   else if(age>64){
     price=price/0.6;
-    message=`senior`;
+    message="Biglietto Senior";
   }
-  console.log(`ciao ${fullName}  tratta ${distance} Km (${message}): ${price} euro`)
+  //console.log(` ${fullName} ${distance} ${age} ${price}`) //riesco a stampare i valori validati
 }
 else {
-  console.log("inserisci valori validi")
+  console.log(`inserisci dati validi`);
+
 }
-
-
-
 });
 
