@@ -33,10 +33,11 @@ const fullName=document.getElementById(`full-name`).value; //debug
 const distance =document.getElementById(`distance`).value;  
 //prendiamo il contenuto del terzo text-input di id# age-range e lo mettiamo in age :
 const age= document.getElementById(`age-range`).value; //debug 
-
+let message;
+let price=distance*0.21;
 if (fullName!==`` && distance!=="" && distance!==NaN &&age!==`` && age!==NaN ){
-  let message="Biglietto standard";
-  let price=distance*0.21;
+  message="Biglietto standard";
+  
   if(age<18){
     price=price/0.8;
     message="Biglietto <18";
@@ -48,8 +49,15 @@ if (fullName!==`` && distance!=="" && distance!==NaN &&age!==`` && age!==NaN ){
   //console.log(` ${fullName} ${distance} ${age} ${price}`) //riesco a stampare i valori validati
 }
 else {
-  console.log(`inserisci dati validi`);
+  alert(`inserisci dati validi`);
 
 }
+document.getElementById("show-name").innerText=fullName;
+document.getElementById("show-ticket").innerText=message;
+let dump= Math.floor(Math.random()*10)+1;
+document.getElementById("show-wagon").innerText=dump;
+dump=Math.floor(Math.random()*100000)
+document.getElementById("show-code-cp").innerText=dump;
+document.getElementById("show-price").innerText=`${price} €`;
 });
 

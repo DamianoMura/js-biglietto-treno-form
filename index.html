@@ -16,7 +16,7 @@
   </head>
   <body class="bg-danger">
     <main>
-      <div class="container text-center">
+      <div class="container text-center my-3 ">
         <div class="row">
           <div class="col-12">
             <div class="fs-1 text-white">
@@ -32,13 +32,13 @@
                     </div>
                     <div class="col-12 col-md-4 h-100">
                       <div class="mb-3">
-                        <label for="distance" class="form-label">Km da percorrere</label>
+                        <label for="distance" class="form-label text-danger">Km da percorrere</label>
                         <input type="number" class="form-control" id="distance" placeholder="tratta" required >
                       </div>
                     </div>
                     <div class="col-12 col-md-4">
                       <div class="mb-3">
-                        <label for="age-range" class="form-label">età età</label>
+                        <label for="age-range" class="form-label">età</label>
                         <input type="number" class="form-control" id="age-range" placeholder="età" required>
                       </div>
                     </div>
@@ -58,21 +58,41 @@
             </div>
           </div>
           <div class="col-12">
-            <div class="container mb-3">
-              <div class="row">
-                <div class="col-12">
-                  <h4>IL TUO BIGLIETTO</h4>
+            <div class="pt-2">
+              <div class="">
+                <h2 class="text-white">IL TUO BIGLIETTO</h2>
+              </div>
+              <div class="bg-white ">
+              
+                <div class=" d-flex  pt-3 mx-3 border-bottom border-secondary">
+                  <h5 class="fw-bold">DETTAGLIO PASSEGGERI</h5>
                 </div>
-                <div class="col-12"></div>
-                <div class="container bg-white">
-                  <div class="row">
-                    <div class="col-12 border_bottom border-secondary d-flex pt-5"><h6 class="fw-bold ">DETTAGLIO PASSEGGERI</h6></div>
-                    <div class="col-4 bg-secondary">
-                      
-                    </div>
-                    <div class="col-8"></div>
-                  </div>
-                </div>
+             <div class="d-flex px-3 justify-content-between border-bottom border-secondary flex-wrap">
+               <div class="d-flex flex-column bg-secondary py-2 px-3 mb-2">
+                 <h5 class="fw-bold">NOME PASSEGGERO</h5>
+                 <span class="fw-bold" id="show-name">JOHN SNOW</span>
+               </div>
+               <div class="d-flex flex-column justify-content-between pt-2 pb-3 px-4 ">
+                 <span class="fw-bold">Offerta</span>
+                  <span id="show-ticket">-----</span>
+               </div>
+               <div class="d-flex flex-column justify-content-between pt-2 pb-3 px-4 ">
+                 <span class="fw-bold">Carrozza</span>
+                  <span id="show-wagon">-----</span>
+               </div>
+               <div class="d-flex flex-column justify-content-between pt-2 pb-3 px-4 ">
+                 <span class="fw-bold">Codice CP</span>
+                  <span id="show-code-cp">-----</span>
+               </div>
+               <div class="d-flex flex-column justify-content-between pt-2 pb-3 px-4 ">
+                 <span class="fw-bold">Costo biglietto</span>
+                  <span id="show-price">-----</span>
+               </div>
+               
+
+             </div>
+              
+           
               </div>
             </div>
             
