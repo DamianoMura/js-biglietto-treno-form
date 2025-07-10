@@ -12,9 +12,26 @@
 
 // Iniziamo implementando il programma senza alcuna estetica: usando esclusivamente due input e un bottone (non stilizzati), realizziamo le specifiche scritte sopra. La risposta finale (o output) sarà anch’essa da scrivere in console.
 
-// il contenuto del nostro primo text-input di id# full-name lo troviamo : 
-console.log(document.getElementById(`full-name`).value)
-// il contenuto del secondo text-input di id# distance lo troviamo :
-console.log(document.getElementById(`distance`).value)
-// il contenuto del secondo text-input di id# distance lo troviamo :
-console.log(document.getElementById(`age-range`).value)
+// il contenuto del nostro primo text-input di id# full-name sarà : 
+console.log(document.getElementById(`full-name`).value) //debug
+// il contenuto del secondo text-input di id# distance sarà :
+console.log(document.getElementById(`distance`).value)  //debug
+// il contenuto del terzo text-input di id# age-range sarà :
+console.log(document.getElementById(`age-range`).value) //debug 
+// il valore però è una stringa vuota al momento del caricamento della pagina
+
+//selezioniamo il bottone per id 
+const button=document.getElementById("submit");
+
+//e gli allacciamo un event listener
+button.addEventListener('click' , function(event){
+  console.log(event);
+  event.preventDefault();
+  // il contenuto del nostro primo text-input di id# full-name sarà : 
+console.log(document.getElementById(`full-name`).value) //debug
+// il contenuto del secondo text-input di id# distance sarà :
+console.log(document.getElementById(`distance`).value)  //debug
+// il contenuto del terzo text-input di id# age-range sarà :
+console.log(document.getElementById(`age-range`).value) //debug 
+// ora invece dopo il click possiamo vedere 
+});
